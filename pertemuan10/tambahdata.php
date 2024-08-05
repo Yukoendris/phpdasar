@@ -14,9 +14,19 @@ if(isset($_POST["submit"])){
                             //     echo mysqli_error($db);
                             // };
     if(tambah($_POST) > 0){
-        echo "Berhasil brok!";
+        echo "
+            <script>
+                alert('Berhasil Brok!');
+                document.location.href = 'index.php';
+            </script>
+            ";
     }else{
-        echo "Yahh gagal";
+        echo "
+            <script>
+                alert('Berhasil Brok!');
+                document.location.href = 'index.php';
+            </script>
+            ";
     }
 }
 ?>
