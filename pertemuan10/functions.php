@@ -29,12 +29,13 @@ function query($query){
 }
 function tambah($data){
     global $db;
-     // ambil data dari tiap elemen dalam form
-    $nama = $data["nama"];
-    $nrp = $data["nrp"];
-    $email = $data["email"];
-    $jurusan = $data["jurusan"];
-    $gambar = $data["gambar"];
+    // ambil data dari tiap elemen dalam form
+    // tambahkan simpel keamanan html dengan function
+    $nama = htmlspecialchars($data["nama"]);
+    $nrp = htmlspecialchars($data["nrp"]);
+    $email = htmlspecialchars($data["email"]);
+    $jurusan = htmlspecialchars($data["jurusan"]);
+    $gambar = htmlspecialchars($data["gambar"]);
 
      // query insert data
      $query = "INSERT INTO mahasiswa
@@ -42,6 +43,12 @@ function tambah($data){
                 ('', '$nama', '$nrp', '$email', '$jurusan', '$gambar')
             ";
     mysqli_query($db, $query);
+    return mysqli_affected_rows($db);
+}
+
+function hapus($id){
+    global $db;
+    mysqli_query($db, "DELETE FROM mahasiswa WHERE id = $id");
     return mysqli_affected_rows($db);
 }
 ?>

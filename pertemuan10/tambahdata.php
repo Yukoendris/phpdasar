@@ -23,7 +23,7 @@ if(isset($_POST["submit"])){
     }else{
         echo "
             <script>
-                alert('Berhasil Brok!');
+                alert('Yahh gagal Brok!');
                 document.location.href = 'index.php';
             </script>
             ";
