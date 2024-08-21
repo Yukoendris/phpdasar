@@ -31,19 +31,19 @@ if(isset($_POST["register"])){
         <ul>
             <li>
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" required>
             </li>
             <li>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" required>
             </li>
             <li>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
             </li>
             <li>
                 <label for="conpass">Confirm Password</label>
-                <input type="password" name="conpass" id="conpass">
+                <input type="password" name="conpass" id="conpass"required>
             </li>
             <li>
                 <button type="submit" name="register">Register!</button>

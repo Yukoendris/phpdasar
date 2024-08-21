@@ -156,6 +156,10 @@ function regis($data){
     // cek username sudak ada atau belum
     $result = mysqli_query($db, "SELECT username FROM users WHERE username = '$username'");
 
+    if( empty(trim($username)) ){
+        return false;
+    }
+
     if(mysqli_fetch_assoc($result)){
         echo "<script>
             alert('Username sudah terdaftar!');
