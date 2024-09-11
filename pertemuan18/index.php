@@ -14,6 +14,9 @@ $mahasiswa = query("SELECT * FROM mahasiswa ORDER BY id DESC LIMIT $firstData, $
 // tombol cari ditekan
 if(isset($_POST["cari"])){
     $mahasiswa = cari($_POST["keyword"]);
+    $_SESSION['keyword'] = $mahasiswa;
+}else{
+    $mahasiswa = $_SESSION["keyword"];
 }
 
 ?>
